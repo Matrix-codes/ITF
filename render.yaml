@@ -3,3 +3,4 @@ services:
     name: itf-platform
     buildCommand: npm install && npm run build
     staticPublishPath: ./out
+ 
