@@ -1,10 +1,5 @@
 services:
-  - type: web
+  - type: static
     name: itf-platform
-    runtime: node
-    plan: free
     buildCommand: npm install && npm run build
-    startCommand: npm start
-    envVars:
-      - key: NODE_VERSION
-        value: 20
+    staticPublishPath: ./out
