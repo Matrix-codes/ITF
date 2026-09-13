@@ -130,7 +130,7 @@ export function Footer() {
         {/* Legal Bottom Bar */}
         <div className="mt-8 pt-6 border-t border-navy-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p>
-            &copy; {new Date().getFullYear()} International Technical Foundation (ITF). All statutory rights reserved.
+            &copy; 2024 International Technical Foundation (ITF). All statutory rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#courses" className="hover:text-white/80 transition-colors">Curriculum Terms</a>
