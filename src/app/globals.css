@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-primary: #0F2A52;
+    --brand-accent: #E8962B;
+    --brand-bg: #FFFEFB;
+    --brand-text: #5B5A54;
+    --brand-border: #E2E0D5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: #FFFEFB;
+    color: #5B5A54;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', Georgia, serif;
+    color: #0F2A52;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+}
+
+/* Institutional focus ring */
+:focus-visible {
+  outline: 2px solid #E8962B;
+  outline-offset: 2px;
+}
+
+/* Universal Top-Level Page Orientation for modern browsers */
+@page {
+  size: A4 landscape;
+  margin: 0mm;
+}
+
+@page :left {
+  margin: 0mm;
+}
+
+@page :right {
+  margin: 0mm;
+}
+
+/* Print styling for certificates: Single-Page A4 Landscape */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0mm;
+  }
+
+  html, body {
+    width: 297mm !important;
+    height: 210mm !important;
+    max-width: 297mm !important;
+    max-height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: hidden !important;
+  }
+
+  /* Universal element hiding */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Make certificate strictly visible */
+  .certificate-print-area,
+  .certificate-print-area * {
+    visibility: visible;
+  }
+
+  header, footer, .no-print, aside, button, nav, form {
+    display: none !important;
+  }
+
+  .certificate-print-area {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 280mm !important;
+    max-width: 280mm !important;
+    height: 192mm !important;
+    max-height: 192mm !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 4mm 8mm !important;
+    border: 3.5px solid #0F2A52 !important;
+    background: #ffffff !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    z-index: 999999 !important;
+  }
+}
+
